@@ -55,14 +55,14 @@ const sCheckbox = document.querySelector('#sCheckbox');
 function check_reg_input() {
     if (fname.value.trim() ==="") {
         displayFailer(fname,document.querySelector('#efname'));
-        // return;
+        return;
     } else {
         displaySuccess(fname,document.querySelector('#efname'));
     }
 
     if (lname.value.trim() ==="") {
         displayFailer(lname,document.querySelector('#elname'));
-        // return;
+        return;
     } else {
         displaySuccess(lname,document.querySelector('#elname'));
     }
@@ -70,14 +70,14 @@ function check_reg_input() {
 
     if (gender.value.trim() ===""){
         displayFailer(gender,document.querySelector('#egender'));
-        // return;
+        return;
     } else {
         displaySuccess(gender,document.querySelector('#egender'));
     }
 
     if (pnum.value.trim() ===""){
         displayFailer(pnum,document.querySelector('#ephone'));
-        // return;
+        return;
     } else {
         displaySuccess(pnum,document.querySelector('#ephone'));
     }
@@ -85,14 +85,14 @@ function check_reg_input() {
 
     if (password.value.trim() ===""){
         displayFailer(password,document.querySelector('#epassword'));
-        // return;
+        return;
     } else {
         displaySuccess(password,document.querySelector('#epassword'));
     }
 
     if (cpassword.value.trim() ===""){
         displayFailer(cpassword,document.querySelector('#ecpassword'));
-        // return;
+        return;
     } else {
         displaySuccess(cpassword,document.querySelector('#ecpassword'));
     }
@@ -100,7 +100,7 @@ function check_reg_input() {
 
     if (sCheckbox.value === false){
         displayFailer(sCheckbox,document.querySelector('#ErrorScheckbox'));
-        // return;
+        return;
     } else {
         displaySuccess(sCheckbox,document.querySelector('#ErrorScheckbox'));
     }
