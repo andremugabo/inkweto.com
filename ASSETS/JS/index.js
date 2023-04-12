@@ -51,7 +51,33 @@ const password = document.querySelector('#password');
 const cpassword = document.querySelector('#cpassword');
 const sCheckbox = document.querySelector('#sCheckbox');
 
-console.log(sCheckbox);
+
+function seller_form_success(element,msg){
+    let get_msg = msg;
+    element.classList.remove('hide');
+    element.style.background = "#00800096";
+    element.innerHTML = `<h4>${get_msg}</h4>`;
+    setInterval(function(){
+        element.classList.add('hide');
+        // location.reload(true);
+    },4000);
+}
+
+
+function seller_form_fail(element,msg){
+    let get_msg = msg;
+    element.classList.remove('hide');
+    element.style.background = "#ff000075";
+    element.innerHTML = `<h4>${get_msg}</h4>`;
+    setInterval(function(){
+        element.classList.add('hide');
+        // location.reload(true);
+    },4000);
+}
+
+
+
+
 
 function check_reg_input() {
     if (fname.value.trim() ==="") {
@@ -108,6 +134,9 @@ function check_reg_input() {
 }
 
 function getUser(){
+
+    if (document.querySelector('#epassword').value==document.querySelector('#ecpassword')) {
+        
     let formData = new FormData(document.querySelector('#regFormSeller'));
     fetch('API/CONTROLLER/usersController.php?action=createUsers',{
         method:"post",
@@ -121,6 +150,13 @@ function getUser(){
             
         }
       });  
+
+
+    } else {
+        seller_form_fail(document.querySelector('.reg_msg'),"PASSWORD DON'T MATCH");
+    }
+
+    
 }
 function insertUser(e){
     e.preventDefault();

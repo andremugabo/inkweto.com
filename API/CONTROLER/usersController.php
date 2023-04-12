@@ -12,6 +12,9 @@ echo $metric;
 
 switch ($action) {
     case 'createUser':
+        
+
+
         echo json_encode($data);
         break;
     

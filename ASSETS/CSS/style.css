@@ -956,6 +956,14 @@ header{
     /* border-radius: 10px; */
 
 }
+.reg_msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+}
 .form_items{
     width: 100%;
     display: flex;

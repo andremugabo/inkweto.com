@@ -47,6 +47,9 @@
         <div class="form_seller_reg">
             <h3>Registration&nbsp;Form&nbsp;|&nbsp;inkweto.com</h3>
             <form action="" method="post" id="regFormSeller">
+                <div class="reg_msg hide">
+                    <!-- <h4>FAILED !!!</h4> -->
+                </div>
                 <div class="form_items">
                     <label for="">FirstName</label>
                     <div class="items_inner">
