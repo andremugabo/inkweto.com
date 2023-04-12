@@ -51,6 +51,7 @@ const password = document.querySelector('#password');
 const cpassword = document.querySelector('#cpassword');
 const sCheckbox = document.querySelector('#sCheckbox');
 
+console.log(sCheckbox);
 
 function check_reg_input() {
     if (fname.value.trim() ==="") {
@@ -98,7 +99,7 @@ function check_reg_input() {
     }
 
 
-    if (sCheckbox.value === false){
+    if (sCheckbox.checked === false){
         displayFailer(sCheckbox,document.querySelector('#ErrorScheckbox'));
         return;
     } else {
@@ -106,7 +107,27 @@ function check_reg_input() {
     }
 }
 
+function getUser(){
+    let formData = new FormData(document.querySelector('#regFormSeller'));
+    fetch('API/CONTROLLER/usersController.php?action=createUsers',{
+        method:"post",
+        body:formData
+    }).then(Response=>Response.json())
+      .then(function(data){
+        console.log(data[0]);
+        if (data[0]==true) {
+            
+        } else {
+            
+        }
+      });  
+}
+function insertUser(e){
+    e.preventDefault();
+    check_reg_input();
+    getUser();
 
+}
  
 
 
@@ -265,6 +286,12 @@ if (start_selling) {
 
     }));
 }
+console.log(document.querySelector('#regFormSeller'));
+if (document.querySelector('#regFormSeller')) {
+    document.querySelector('#regFormSeller').addEventListener('submit',insertUser);
+}
+
+
 
 /** =======================================================
  *                           RUN FUNCTION

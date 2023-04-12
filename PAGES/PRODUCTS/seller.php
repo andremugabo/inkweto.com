@@ -15,7 +15,7 @@
         </div>
         <div class="form_seller_log hide">
             <h3>Login&nbsp;Form&nbsp;|&nbsp;inkweto.com</h3>
-            <form action="" method="post">
+            <form action="" method="post" id="loginFormseller">
                 <div class="form_items">
                     <label for="">Phone&nbspNumber</label>
                     <div class="items_inner">
@@ -46,7 +46,7 @@
 
         <div class="form_seller_reg">
             <h3>Registration&nbsp;Form&nbsp;|&nbsp;inkweto.com</h3>
-            <form action="" method="post">
+            <form action="" method="post" id="regFormSeller">
                 <div class="form_items">
                     <label for="">FirstName</label>
                     <div class="items_inner">
