@@ -134,9 +134,12 @@ function check_reg_input() {
 }
 
 function getUser(){
-
-    if (document.querySelector('#epassword').value==document.querySelector('#ecpassword')) {
-        
+        let passWord_create = document.querySelector('#password').value;
+        let confirm_passWord_create = document.querySelector('#password').value;
+        console.log('password '+document.querySelector('#password').value);
+        console.log('confirm '+document.querySelector('#cpassword').value);
+    if (passWord_create == confirm_passWord_create) {
+        console.log('bonjour')
     let formData = new FormData(document.querySelector('#regFormSeller'));
     fetch('API/CONTROLLER/usersController.php?action=createUsers',{
         method:"post",
@@ -145,13 +148,13 @@ function getUser(){
       .then(function(data){
         console.log(data[0]);
         if (data[0]==true) {
-            
+            seller_form_success(document.querySelector('.reg_msg'),"SUCCESSFULLY REGISTORED");
         } else {
             
         }
       });  
 
-
+      
     } else {
         seller_form_fail(document.querySelector('.reg_msg'),"PASSWORD DON'T MATCH");
     }

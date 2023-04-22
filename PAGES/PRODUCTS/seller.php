@@ -118,7 +118,7 @@
 
                 <div class="form_items">
                     <div class="items_inner_check_box">
-                        <input type="checkbox"  id="sCheckbox">
+                        <input type="checkbox" name="sCheckbox" value="true" id="sCheckbox">
                         <span>I agree to the Terms of Use</span>                        
                     </div>
                     <p class="hide" id="ErrorScheckbox">Error Agree Terms of Use </p>
