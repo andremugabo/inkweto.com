@@ -1,5 +1,5 @@
 <?php
-require_once"db.class.php";
+require_once"db.php";
 class metricModel extends db{
 
     public function selectMetric(){

@@ -1,0 +1,137 @@
+/* ==========================================================
+                        SELLER FORM  START
+============================================================= */ 
+const fname = document.querySelector('#fname');
+const lname = document.querySelector('#lname');
+const gender = document.querySelector('#gender');
+const pnum = document.querySelector('#pnum');
+const password = document.querySelector('#password');
+const cpassword = document.querySelector('#cpassword');
+const sCheckbox = document.querySelector('#sCheckbox');
+
+
+function seller_form_success(element,msg){
+    let get_msg = msg;
+    element.classList.remove('hide');
+    element.style.background = "#00800096";
+    element.innerHTML = `<h4>${get_msg}</h4>`;
+    setInterval(function(){
+        element.classList.add('hide');
+        // location.reload(true);
+    },4000);
+}
+
+
+function seller_form_fail(element,msg){
+    let get_msg = msg;
+    element.classList.remove('hide');
+    element.style.background = "#ff000075";
+    element.innerHTML = `<h4>${get_msg}</h4>`;
+    setInterval(function(){
+        element.classList.add('hide');
+        // location.reload(true);
+    },4000);
+}
+
+
+
+
+
+function check_reg_input() {
+    if (fname.value.trim() ==="") {
+        displayFailer(fname,document.querySelector('#efname'));
+        return;
+    } else {
+        displaySuccess(fname,document.querySelector('#efname'));
+    }
+
+    if (lname.value.trim() ==="") {
+        displayFailer(lname,document.querySelector('#elname'));
+        return;
+    } else {
+        displaySuccess(lname,document.querySelector('#elname'));
+    }
+    
+
+    if (gender.value.trim() ===""){
+        displayFailer(gender,document.querySelector('#egender'));
+        return;
+    } else {
+        displaySuccess(gender,document.querySelector('#egender'));
+    }
+
+    if (pnum.value.trim() ===""){
+        displayFailer(pnum,document.querySelector('#ephone'));
+        return;
+    } else {
+        displaySuccess(pnum,document.querySelector('#ephone'));
+    }
+
+
+    if (password.value.trim() ===""){
+        displayFailer(password,document.querySelector('#epassword'));
+        return;
+    } else {
+        displaySuccess(password,document.querySelector('#epassword'));
+    }
+
+    if (cpassword.value.trim() ===""){
+        displayFailer(cpassword,document.querySelector('#ecpassword'));
+        return;
+    } else {
+        displaySuccess(cpassword,document.querySelector('#ecpassword'));
+    }
+
+
+    if (sCheckbox.checked === false){
+        displayFailer(sCheckbox,document.querySelector('#ErrorScheckbox'));
+        return;
+    } else {
+        displaySuccess(sCheckbox,document.querySelector('#ErrorScheckbox'));
+    }
+}
+
+function getUser(){
+        let passWord_create = document.querySelector('#password').value;
+        let confirm_passWord_create = document.querySelector('#password').value;
+        console.log('password '+document.querySelector('#password').value);
+        console.log('confirm '+document.querySelector('#cpassword').value);
+    if (passWord_create === confirm_passWord_create) {
+        console.log('bonjour')
+    let formData = new FormData(document.querySelector('#regFormSeller'));
+    fetch('API/CONTROLLER/usersController.php?action=createUsers',{
+        method:"post",
+        body:formData
+    }).then(Response=>Response.json())
+      .then(function(data){
+        console.log(data[0]);
+        if (data[0]==true) {
+            seller_form_success(document.querySelector('.reg_msg'),"SUCCESSFULLY REGISTORED");
+        } else {
+            
+        }
+      });  
+
+      
+    } else {
+        seller_form_fail(document.querySelector('.reg_msg'),"PASSWORD DON'T MATCH");
+    }
+
+    
+}
+function insertUser(e){
+    e.preventDefault();
+    check_reg_input();
+    getUser();
+
+}
+ 
+
+
+
+
+
+
+/* ==========================================================
+                        SELLER FORM  END
+============================================================= */ 

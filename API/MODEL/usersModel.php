@@ -1,5 +1,5 @@
 <?php
-require_once "db.class.php";
+require_once "db.php";
 class usersModel extends db{
 
     public function selectActiveUsers(){
