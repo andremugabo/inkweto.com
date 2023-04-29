@@ -1,5 +1,8 @@
 <?php 
-
+function base(){
+    echo str_replace("index.php","",$_SERVER['PHP_SELF']);
+}
+// require_once('../../url_controler.php');
 class db{
 	
 	private $host = "localhost";

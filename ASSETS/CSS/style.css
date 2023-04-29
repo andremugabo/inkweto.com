@@ -1078,60 +1078,183 @@ header{
     /* color: black; */
     box-shadow: 2px 3px 4px rgb(29, 26, 12);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ERROR PAGE ENDS */
+/* SELLER DASHBOARD START HERE */
+.seller_dashboard{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+.seller_dashboard_left{
+    width: 20%;
+    height: 100vh;
+    background-color: #041e42;
+    display: flex;
+    flex-direction: column;
+}
+.seller_dashboard_right{
+    width: 80%;
+    height: 100vh;
+    border: 1px solid #041e42 ;
+    background-color: #e7e7e7;
+}
+.seller_dash_title,.button_dash{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    background-color: #041e42;
+    padding: 5px 10px;
+    align-items: center;
+}
+.seller_dash_title>span{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+}
+.login_name{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.login_name>h4{
+    color: white;
+}
+.s_dashboard{
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+.s_dashboard>span{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #012934;
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.seller_dashboard_left>ul{
+    width: 100%;
+    padding-top: 30px;
+}
+.seller_dashboard_left>ul>li{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0px 0px 20px;
+    border-bottom: 1px solid white;
+    transition:1s;
+    height: 40px;
+}
+.seller_dashboard_left>ul>li>button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background:transparent;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+.seller_dashboard_left>ul>li:hover{
+    background: linear-gradient(135deg,#11b0e8bf,#33769580);
+}
+.row_dash{
+    width:100%;
+    padding: 5px 10px;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap:20px;
+}
+.col_dash{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    transition: 1s;
+}
+.col_dash:hover{
+    box-shadow: 9px 8px 10px #041e42;
+}
+.col_dash>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+}
+.col_dash>a>span{
+    display: block;
+    width: 100%;
+    height: 25px;
+    background-color: #041e42;
+    color: white;
+    text-align: center;
+}
+.principalD{
+    width: 100%;
+    height: calc(100% - 25px);
+    display: flex;
+}
+.left_das{
+    width: 70%;
+    height: 100%;
+}
+.left_das>h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: black;
+    font-weight: 800;
+}
+.right_das{
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right_das>img{
+    width: 50px;
+}
+.button_dash{
+    border-top: 1px solid white;
+    height: 50px;
+    border-left: 1px solid white;
+}
+.left_btn_dash{
+    width: 60vw;
+    display: flex;
+}
+.left_btn_dash>button,.right_btn_dash>button{
+    width: 100%;
+    background-color: #edff00a8;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    transition: all 2s;
+    cursor: pointer;
+}
+.left_btn_dash>button:hover,.right_btn_dash>button:hover{
+    background-color: #077c7869;
+}
+.right_btn_dash{
+    width: 70px;
+}
+.right_btn_dash>button>img{
+    width: 15px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* SELLER DASHBOARD ENDS HERE */
 
 
 

@@ -1,4 +1,5 @@
 <?php
+
 require_once "db.php";
 class usersModel extends db{
 
@@ -61,25 +62,73 @@ class usersModel extends db{
     }
 
     public function checkIfUserExist($phone,$fname,$lname){
-        $sql = "SELECT * FROM user WHERE users.u_phone = ? AND users.u_fname = ? AND users.u_lname = ?";
+        $sql = "SELECT * FROM users WHERE users.u_phone = ? AND users.u_fname = ? AND users.u_lname = ?";
         $statement = $this->connect()->prepare($sql);
         $statement->execute(array(
             $phone,
             $fname,
             $lname
         ));
+        $result = $statement->rowCount();
+        return $result;
+    }
+
+    public function checkIfSellerExist($phone,$u_role){
+        $sql = "SELECT * FROM users WHERE users.u_phone = ?  AND users.u_role = ?";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute(array(
+            $phone,
+            $u_role
+        ));
+        $result = $statement->rowCount();
+        return $result;
+    }
+
+
+    public function checkIfSellerCanLog($phone,$password,$u_role){
+        $sql = "SELECT * FROM users WHERE users.u_phone = ? AND users.u_password = ?  AND users.u_role = ? AND users.u_status = 1";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute(array(
+            $phone,
+            $password,
+            $u_role
+        ));
+        $result = $statement->rowCount();
+        return $result;
+    }
+
+
+    public function checkIfSellerCanLogged($phone,$password,$u_role){
+        $sql = "SELECT users.*, gender.* FROM users JOIN gender ON users.g_id = gender.g_id WHERE users.u_phone = ? AND users.u_password = ?  AND users.u_role = ? AND users.u_status = 1";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute(array(
+            $phone,
+            $password,
+            $u_role
+        ));
         $result = $statement->fetch();
         return $result;
     }
 
-    public function insertUser($u_reg,$u_fname,$u_lname,$u_gid,$u_phone,$u_password,$u_role){
-        $sql = "INSERT INTO USERS(u_reg,u_fname,u_lname,u_gid,u_phone,u_password,u_role) VALUES(?,?,?,?,?,?,?)";
+    public function getId($phone,$u_role){
+        $sql = "SELECT u_id FROM users WHERE users.u_phone = ?  AND users.u_role = ?";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute(array(
+            $phone,
+            $u_role
+        ));
+        $result = $statement->fetch();
+        return $result;
+    }
+
+    public function insertUser($u_reg,$u_fname,$u_lname,$g_id,$u_phone,$u_password,$u_role){
+        $sql = "INSERT INTO USERS(u_reg,u_fname,u_lname,g_id,u_phone,u_password,u_role) VALUES(?,?,?,?,?,?,?)";
         $statement = $this->connect()->prepare($sql);
         $statement->execute(array(
             $u_reg,
             $u_fname,
             $u_lname,
-            $u_gid,
+            $g_id,
             $u_phone,
             $u_password,
             $u_role

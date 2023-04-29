@@ -15,12 +15,12 @@
         </div>
         <div class="form_seller_log hide">
             <h3>Login&nbsp;Form&nbsp;|&nbsp;inkweto.com</h3>
-            <form action="" method="post" id="loginFormseller">
+            <form action="api/CONTROLER/usersController.php?action=login" method="post" id="loginFormseller">
                 <div class="form_items">
                     <label for="">Phone&nbspNumber</label>
                     <div class="items_inner">
                         <img src="ASSETS/SIMAGES/Phone.png" alt="PHONE">
-                        <input type="text" placeholder="Enter your Phone Number" autocomplete="off">
+                        <input type="text" placeholder="Enter your Phone Number" name="u_phone" autocomplete="off" required>
                     </div>
                     <p class="hide" id="elphone">Error Enter your Phone Number </p>
                 </div>
@@ -29,13 +29,13 @@
                     <label for="">Password</label>
                     <div class="items_inner">
                         <img src="ASSETS/SIMAGES/Key.png" alt="KEY">
-                        <input type="Password" placeholder="Enter Password"   autocomplete="off">
+                        <input type="Password" placeholder="Enter Password" name="u_password"  autocomplete="off" required>
                     </div>
                     <p class="hide" id="elpassword">Error Enter your Password </p>
                 </div>
 
                 <div class="btn_submit">
-                    <button type="submit">Login</button>
+                    <button type="submit" name="sellerLog">Login</button>
                 </div>
 
             </form>
@@ -45,9 +45,9 @@
         <div class="msg">
             <?php 
                 if (isset($_SESSION['success_msg']) && !empty($_SESSION['success_msg'])) {?>
-                                <h1 style="background: #0fdd1d7a;padding: 5px;width: 100%;text-align: center;"><?= $_SESSION['success_msg'] ?></h1>
+                                <h1 style="background: #0fdd1d7a;padding: 5px;width: 100%;text-align: center;font-size:12px;font-weight:600;color:white;"><?= $_SESSION['success_msg'] ?></h1>
                             <?php  $_SESSION['success_msg']="";  }else if(isset($_SESSION['fail_msg']) && !empty($_SESSION['fail_msg'])){?>
-                                <h1 style="background: #b71c1c8f;padding: 5px;width: 100%;text-align: center;"><?= $_SESSION['fail_msg'] ?></h1>
+                                <h1 style="background: #b71c1c8f;padding: 5px;width: 100%;text-align: center;font-size:12px;font-weight:600;color:white;"><?= $_SESSION['fail_msg'] ?></h1>
                         <?php $_SESSION['fail_msg']="";	}			
             ?>
 		</div>
@@ -58,7 +58,7 @@
 
         <div class="form_seller_reg">
             <h3>Registration&nbsp;Form&nbsp;|&nbsp;inkweto.com</h3>
-            <form action="api/CONTROLER/usersController.php?action=createUsers" method="post" id="regFormSeller">
+            <form action="api/CONTROLER/usersController.php?action=createUsersSeller" method="post" id="regFormSeller">
                 <div class="reg_msg hide">
                     <!-- <h4>FAILED !!!</h4> -->
                 </div>
@@ -88,8 +88,8 @@
                         <label for="gender" id="forselect">Gender</label>
                         <select name="gender" id="gender" name="gender" required>
                             <option value="" selected disabled>Select Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
                         </select>
 
                     </div>

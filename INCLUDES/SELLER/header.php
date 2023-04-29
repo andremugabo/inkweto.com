@@ -1,5 +1,8 @@
 <?php
-//session_start();
+if (isset($_GET['logout'])) {
+    header("location:./");
+    session_destroy();
+}
 
 
 ?>
@@ -17,9 +20,9 @@
 <body>
     <header class="d-flex w-100 justity-content-space-between align-items-center">
         <div class="c_log d-flex justity-content-center align-items-center">
-            <a href="./"><img src="ASSETS/SIMAGES/weblogo.png" alt="company logo"></a>
+            <a href="#"><img src="ASSETS/SIMAGES/weblogo.png" alt="company logo"></a>
         </div>
-        <div class="create_shop">
+        <!-- <div class="create_shop">
             <button onclick="window.location.href='<?=base()?>seller'" class="d-flex justity-content-center align-items-center"><img src="ASSETS/SIMAGES/Shop.png" alt="shop_image">Create Shop</button>
         </div>
         <div class="h_search">
@@ -50,7 +53,17 @@
         </div>
         <div class="responsive_menu d-none">
             <button><img src="ASSETS/SIMAGES/Menu.png" alt="h_menu"></button>
-        </div>
+        </div> -->
+        
+            <div class="h_cart d-flex">
+            <button><img src="ASSETS/SIMAGES/MessageD.png" alt="h_cart"></button><span class="d-flex justity-content-center align-items-center">0</span>
+            </div>
+            
+            <div class="create_shop" style="margin-right: 30px;">
+                <button class="d-flex justity-content-center align-items-center"  onclick="window.location.href='?logout=1'">LOGOUT</button>
+            </div>
+        
+        
 
 
     </header>

@@ -53,5 +53,6 @@
         </div>
     </footer>
     <script src="ASSETS/JS/index.js"></script>
+    <script src="ASSETS/JS/bootstrap.js"></script>
 </body>
 </html>
