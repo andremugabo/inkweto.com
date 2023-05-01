@@ -153,7 +153,7 @@
     <div class="inner_product_view">
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_003.jpg');">
 
                 </div>
@@ -168,7 +168,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images2.jpg');">
 
                 </div>
@@ -183,7 +183,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_032.jpg');">
 
                 </div>
@@ -198,7 +198,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images4.jpg');">
 
                 </div>
@@ -213,7 +213,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images33.jpg');">
 
                 </div>
@@ -228,7 +228,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images111.jpg');">
 
                 </div>
@@ -243,7 +243,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_009.jpg');">
 
                 </div>
@@ -258,7 +258,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_010.jpg');">
 
                 </div>
@@ -273,7 +273,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_011.jpg');">
 
                 </div>
@@ -288,7 +288,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_012.jpg');">
 
                 </div>
@@ -303,7 +303,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_013.jpg');">
 
                 </div>
@@ -318,7 +318,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_014.jpg');">
 
                 </div>
@@ -333,7 +333,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_015.jpg');">
 
                 </div>
@@ -348,7 +348,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_016.jpg');">
 
                 </div>
@@ -363,7 +363,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_017.jpg');">
 
                 </div>
@@ -378,7 +378,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_018.jpg');">
 
                 </div>
@@ -393,7 +393,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_019.jpg');">
 
                 </div>
@@ -408,7 +408,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_020.jpg');">
 
                 </div>
@@ -423,7 +423,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_021.jpg');">
 
                 </div>
@@ -438,7 +438,7 @@
         </div>
 
         <div class="p_card">
-            <a href="#">
+            <a href="<?=base();?>viewDetailsProduct">
                 <div class="p_card_pic" style="background-image: url('ASSETS/TESTIMAGES/images_023.jpg');">
 
                 </div>

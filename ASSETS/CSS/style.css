@@ -1084,6 +1084,7 @@ header{
     width: 100%;
     min-height: 100vh;
     display: flex;
+    position: relative;
 }
 .seller_dashboard_left{
     width: 20%;
@@ -1253,7 +1254,141 @@ header{
 .right_btn_dash>button>img{
     width: 15px;
 }
-
+.seller_dash_modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00000099;
+    height: 100%;
+}
+.modal{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: white; */
+    background-color: #041e428f;
+    border-radius: 5px;
+}
+#CreateShopModal{
+    width: 30%;
+    height: 350px;
+}
+.modal-content{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.modal-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    height: 10%;
+}
+.modal-header>h5{
+    font-weight: 800;
+    font-size: 30px;
+    color: #212529;
+    color:white;
+}
+.modal-header>button,.modal-footer>button{
+    background-color: red;
+    width: 50px;
+    color: white;
+    padding: 5px;
+    font-weight: 900;
+    border-radius: 5px;
+}
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 10px;
+}
+.modal-body{
+    width: 100%;
+    height: 80%;
+}
+.modal-body>form{
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+}
+.modal_input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border:1px solid lightgray;
+    margin: 10px 0px;
+    border-radius: 5px;
+}
+.modal_input>input{
+    padding: 5px 0px;
+    outline: none;
+    border: 1px solid lightgray;
+    background:#ffffff6d;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    padding-left: 2px;
+}
+.modal_input>input[type="file"]{
+    border: none;
+    background: transparent;
+}
+.modal_input>button{
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #00cdff;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 1s;
+}
+.modal_input>button:hover{
+    background-color: #00ccff4a;
+    color: #171717;
+}
+.modal_input>label{
+    color: white;
+    font-weight: bold;
+}
+.display_shop{
+    width: 100%;
+    height: 85vh;
+    padding: 5px;
+}
+.display_shop>table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.display_shop>table>thead>tr{
+    background-color: #041e42;
+    color: white;
+}
+.display_shop>table>tbody>tr{
+    background-color: gray;
+    border-bottom: 1px solid white;
+}
+table th{
+	padding: 5px;
+	border: 1px solid dimgrey;
+	color: white;
+	font-weight: bold;
+	background-color: #041e42;
+}
+table td{
+	padding: 10px;
+	border: 1px solid #515151;
+	color: #2c2c2c;
+	font-weight: 500;
+	background-color: #ffffffd4;
+}
 /* SELLER DASHBOARD ENDS HERE */
 
 
@@ -1279,7 +1414,7 @@ footer{
 }
 .col h3,h2{
     margin-bottom: 20px;
-    color: white;
+    color:white;
 }
 .col ul li{
     padding: 3px;

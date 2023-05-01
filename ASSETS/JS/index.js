@@ -105,12 +105,35 @@ function displayFailer(idElemenet,errorId){
     errorId.classList.remove("hide");
 }
 
+/* =====================================================
+                      MODAL JS START 
+======================================================== */ 
+function openModel(e){
+    e.preventDefault();
+    if (document.querySelector('.seller_dash_modal').classList.contains('hide') == 1){
+        document.querySelector('.seller_dash_modal').classList.remove('hide');
+    }
+}
+
+if (document.querySelector('.seller_dash_modal')) {
+    document.querySelector('.open_modal').addEventListener("click",openModel);
+}
+
+document.querySelectorAll('.btn-close').forEach(Btns =>{
+    Btns.addEventListener("click",function(e){
+        e.preventDefault();
+        if (document.querySelector('.seller_dash_modal').classList.contains('hide')!=1) {
+            document.querySelector('.seller_dash_modal').classList.add('hide');            
+        }
+
+    });
+});
 
 
 
-
-
-
+/* =====================================================
+                      MODAL JS ENDS 
+======================================================== */ 
 /** =======================================================
  *                           EVENTS
  * ========================================================*/

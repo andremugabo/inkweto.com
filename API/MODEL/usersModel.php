@@ -86,7 +86,7 @@ class usersModel extends db{
 
 
     public function checkIfSellerCanLog($phone,$password,$u_role){
-        $sql = "SELECT * FROM users WHERE users.u_phone = ? AND users.u_password = ?  AND users.u_role = ? AND users.u_status = 1";
+        $sql = "SELECT * FROM users WHERE users.u_phone = ? AND users.u_password = ?  AND users.u_role = ?";
         $statement = $this->connect()->prepare($sql);
         $statement->execute(array(
             $phone,

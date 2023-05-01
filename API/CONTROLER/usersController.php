@@ -38,13 +38,13 @@ switch ($action) {
                         // CREATING SELLER REG NUMBER
                         if ($countUsers < 10) {
                             $u_reg = "I-"."00000".$countUsers;
-                        } else if($countUsers < 100) {
+                        } else if($countUsers >=10 && $countUsers < 100) {
                             $u_reg = "I-"."0000".$countUsers;
-                        }else if($countUsers < 1000) {
+                        }else if($countUsers >=100 && $countUsers < 1000) {
                             $u_reg = "I-"."000".$countUsers;
-                        }else if($countUsers < 10000) {
+                        }else if($countUsers >=1000 && $countUsers < 10000) {
                             $u_reg = "I-"."00".$countUsers;
-                        }else if($countUsers < 100000) {
+                        }else if($countUsers >=10000 && $countUsers < 100000) {
                             $u_reg = "I-"."0".$countUsers;
                         }else{
                             $u_reg = "I-".$countUsers; 

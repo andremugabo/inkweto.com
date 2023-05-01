@@ -45,11 +45,86 @@
                 <button>Opened&nbsp;Shops</button>&nbsp;
                 <button>Closed&nbsp;Shops</button>
             </div>
-            <div class="right_btn_dash">
+            <div class="right_btn_dash  open_modal">
                 <button><img src="ASSETS/SIMAGES/Shop.png" alt=""></button>
             </div>
         </div>
+        <div class="display_shop">
+            <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Shop&nbsp;Name</th>
+                        <th scope="col">Reg&nbsp;Number</th>
+                        <th scope="col">Shop&nbsp;Logo</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
 
     
-    </div>    
+    </div>  
+    <div class="seller_dash_modal hide">
+
+            <div class="modal" id="CreateShopModal">
+                
+                
+            <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create&nbsp;Shop</h5>
+                            <button type="button" class="btn-close" >Close</button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="api/CONTROLER/shopController.php?action=createShop" method="post" enctype="multipart/form-data">        
+                                <div class="modal_input hide">
+                                    <label for="" class="form-label">Seller</label>
+                                    <input class="form-control" name="u_id" type="text" value="<?= $loggedID;?>" required>
+                                </div>
+
+                                <div class="modal_input">
+                                    <label for="" class="form-label">Shop Name</label>
+                                    <input class="form-control" name="s_name" type="text" placeholder="Enter Shop Name" required>
+                                </div>
+
+
+                                <div class="modal_input">
+                                    <label for="" class="form-label">Shop Logo</label>
+                                    <input class="form-control" name="s_logo" type="file" placeholder="Shop Logo" required>
+                                </div>
+
+                                <div class="modal_input">
+                                <button type="submit" name="create_shop">Create&nbsp;Shop</button>
+                                </div>
+                            </form>
+                        
+                        
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-close" style="position: absolute;right: 15px;bottom: 15px;">Close</button>
+                        </div>
+                    </div>
+                
+            </div>                     
+        
+    </div>  
 </div>
