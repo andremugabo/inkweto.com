@@ -28,11 +28,21 @@ class shopModel extends db{
 
 
     public function countAllUsers(){
-        $sql = "SELECT *FROM shop";
+        $sql = "SELECT * FROM shop";
         $statement = $this->connect()->prepare($sql);
         $statement->execute();
         $result = $statement->rowCount();
         return $result;
+    }
+
+    public function selectActiveShop(){
+        $sql = "SELECT shop.*,users.u_id,users.u_fname,users.u_lname FROM shop JOIN users ON shop.u_id = users.u_id WHERE shop.s_status = 1";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute();
+
+        while($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
+            return $result;
+        }
     }
 
 

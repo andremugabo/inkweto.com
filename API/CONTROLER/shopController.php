@@ -5,6 +5,7 @@ require_once"../MODEL/metricModel.php";
 $shops = new shopModel();
 $metrics = new metricModel();
 $action = $_GET['action'];
+$shop = array();
 
 
 switch ($action) {
@@ -48,19 +49,23 @@ switch ($action) {
                    
                    
                     $_SESSION['success_msg'] = $s_name." SHOP REGISTERED SUCCESSFULLY !! ";
-                    // header("location:../../".base()."shop");
+                    header("location:../../".base()."shop");
                 } else {
                     $_SESSION['fail_msg']=" SHOP ALLREADY EXIST!!";
                     header("location:../../".base()."shop");
                 }                        
             } else {
                 $_SESSION['fail_msg']="FILL OUT ALL TEXT FIELD !!";
-                // header("location:../../".base()."shop");
+                header("location:../../".base()."shop");
             }
             
             
         }
         break;
+        case 'displayShop':
+            array_push($shop,$shops->selectActiveShop());
+            echo json_encode($shop);
+            break;
     
     default:
         # code...
@@ -68,5 +73,5 @@ switch ($action) {
 }
 
 
-
+header("content-type:application/json");
 ?>

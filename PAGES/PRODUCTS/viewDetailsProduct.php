@@ -21,7 +21,7 @@
             </div>
             <div class="product_price">
                 <h4>20,000&nbsp;Frw</h4>
-                <span>25.000&nbsp;Frw</span>
+                <span>25,000&nbsp;Frw</span>
             </div>
             <div class="rating_product">
                 <span style="font-size: 150%;color: #777">&starf;</span>
@@ -48,6 +48,7 @@
                     <div class="color_img_value" style="background-color:yellow"></div>
                     <div class="color_img_value" style="background-color:chartreuse"></div>
                     <div class="color_img_value" style="background-color:deeppink"></div>
+                    <div class="color_img_value" style="background-color:coral"></div>
 
                     
                 </div>
@@ -69,6 +70,31 @@
                     <div class="size_img_value" >45</div>                    
                 </div>
             </div>
+
+
+            <div class="product_quantity">
+                <div class="quantity_value">
+                    <h5>Quantity:</h5>
+                </div>
+                <div class="quantity_img">
+                     <span class="quantity_input">
+                        <span class="increase_quantity"><button>-</button></span>
+                        <span class="input_value"><input type="text" value="1"></span>
+                        <span class="decrease_quantity"><button>+</button></span>
+                     </span> 
+                     <div class="available_quantity">
+                        <span>298 Pieces available</span>
+                     </div>                  
+                </div>
+            </div>
+
+
+            <div class="product_buy_btn">
+                <button class="buy_now">Buy Now</button>
+                <button class="add_to_cart">Add&nbsp;To&nbsp;Cart</button>
+                <Button class="like_product"><img src="ASSETS/SIMAGES/Hearts1.png" alt="heart">&nbsp;<span>14.3K</span></Button>
+            </div>
+
 
 
 

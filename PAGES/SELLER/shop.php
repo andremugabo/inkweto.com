@@ -54,27 +54,15 @@
                     <thead>
                         <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Owner&nbsp;Name</th>
                         <th scope="col">Shop&nbsp;Name</th>
                         <th scope="col">Reg&nbsp;Number</th>
                         <th scope="col">Shop&nbsp;Logo</th>
                         <th scope="col">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        </tr>
+                    <tbody class="tbody_shop">
+                        
                     </tbody>
                 </table>
         </div>

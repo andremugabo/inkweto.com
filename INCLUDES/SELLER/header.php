@@ -60,7 +60,7 @@ if (isset($_GET['logout'])) {
             </div>
             
             <div class="create_shop" style="margin-right: 30px;">
-                <button class="d-flex justity-content-center align-items-center"  onclick="window.location.href='?logout=1'">LOGOUT</button>
+                <button class="d-flex justity-content-center align-items-center"  onclick="window.location.href='<?=base()?>?logout=1'">LOGOUT</button>
             </div>
         
         

@@ -134,6 +134,55 @@ document.querySelectorAll('.btn-close').forEach(Btns =>{
 /* =====================================================
                       MODAL JS ENDS 
 ======================================================== */ 
+/* =====================================================
+                    SHOP DISPLAY START
+========================================================*/ 
+let j = 0;
+async function displayShop(){
+    try {
+        const response = await fetch("api/CONTROLER/shopController.php?action=displayShop")
+        if (!response.ok) {
+            throw new Error("Network response was not Ok");
+        }        
+
+        const data = await response.json();
+        // console.log(data[0]);
+        for (const item of data) {
+                console.log(item);
+            for (let i = 0; i < item.length; i++) {
+                const element = item[i];
+                console.log(element.s_logo);
+                 j = j+1;
+                document.querySelector('.tbody_shop').innerHTML+=`
+                    <tr>
+                    <th scope="row">${j}</th>
+                    <td>${element.u_fname}`+" " +`${element.u_lname}</td>
+                    <td>${element.s_name}</td>
+                    <td>${element.s_reg}</td>
+                    <td class="slogo_s" style="background-image: url('ASSETS/SLOGOPIC/${element.s_logo}');" ></td>
+                    <td><button class="btn1_s" title="view shop" onclick="window.location.href='shopDetail'"><img src="ASSETS/SIMAGES/Visible1.png" alt="view image"></button>&nbsp;&nbsp;&nbsp;<button class="btn2_s" title="delete shop"><img src="ASSETS/SIMAGES/Delete.png" alt="view image"></button></td>
+                    </tr>
+                `;
+                
+            }
+            
+        }
+
+    } catch (error) {
+        
+    }
+}
+
+if (document.querySelector('.tbody_shop')) {
+    displayShop();
+}
+
+
+
+
+/* =====================================================
+                    SHOP DISPLAY END
+========================================================*/ 
 /** =======================================================
  *                           EVENTS
  * ========================================================*/
