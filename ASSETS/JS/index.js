@@ -138,44 +138,56 @@ document.querySelectorAll('.btn-close').forEach(Btns =>{
                     SHOP DISPLAY START
 ========================================================*/ 
 let j = 0;
+// if (document.querySelector('.get_seller')) {
+    // const seller_id = document.querySelector('.get_seller').value;
+    // console.log(seller_id+" here");
+
+
+
+
 async function displayShop(){
     try {
-        const response = await fetch("api/CONTROLER/shopController.php?action=displayShop")
+        console.log("hooooooo 1");
+        
+        const response = await fetch("localhost/academic/api/CONTROLER/shopController.php?action=displayShop")
         if (!response.ok) {
             throw new Error("Network response was not Ok");
         }        
-
-        const data = await response.json();
-        // console.log(data[0]);
-        for (const item of data) {
-                console.log(item);
-            for (let i = 0; i < item.length; i++) {
-                const element = item[i];
-                console.log(element.s_logo);
-                 j = j+1;
-                document.querySelector('.tbody_shop').innerHTML+=`
-                    <tr>
-                    <th scope="row">${j}</th>
-                    <td>${element.u_fname}`+" " +`${element.u_lname}</td>
-                    <td>${element.s_name}</td>
-                    <td>${element.s_reg}</td>
-                    <td class="slogo_s" style="background-image: url('ASSETS/SLOGOPIC/${element.s_logo}');" ></td>
-                    <td><button class="btn1_s" title="view shop" onclick="window.location.href='shopDetail'"><img src="ASSETS/SIMAGES/Visible1.png" alt="view image"></button>&nbsp;&nbsp;&nbsp;<button class="btn2_s" title="delete shop"><img src="ASSETS/SIMAGES/Delete.png" alt="view image"></button></td>
-                    </tr>
-                `;
+            console.log("hooooooo");
+        const data = await JSON.stringify(response.json());
+        console.log(data);
+        // for (const item of data) {
+        //         console.log(item);
+        //     for (let i = 0; i < item.length; i++) {
+        //         const element = item[i];
+        //         console.log(element.s_logo);
+        //          j = j+1;
+        //         document.querySelector('.tbody_shop').innerHTML+=`
+        //             <tr>
+        //             <th scope="row">${j}</th>
+        //             <td>${element.u_fname}`+" " +`${element.u_lname}</td>
+        //             <td>${element.s_name}</td>
+        //             <td>${element.s_reg}</td>
+        //             <td class="slogo_s" style="background-image: url('ASSETS/SLOGOPIC/${element.s_logo}');" ></td>
+        //             <td><button class="btn1_s" title="view shop" onclick="window.location.href='shopDetail'"><img src="ASSETS/SIMAGES/Visible1.png" alt="view image"></button>&nbsp;&nbsp;&nbsp;<button class="btn2_s" title="delete shop"><img src="ASSETS/SIMAGES/Delete.png" alt="view image"></button></td>
+        //             </tr>
+        //         `;
                 
-            }
+        //     }
             
-        }
+        // }
 
     } catch (error) {
-        
+        console.log(error);
     }
 }
 
 if (document.querySelector('.tbody_shop')) {
     displayShop();
 }
+// }
+
+
 
 
 
@@ -269,3 +281,102 @@ if (start_selling) {
  *                           RUN FUNCTION
  * ========================================================*/
 // slide_forward();
+
+
+/*========================================================
+                    PAYMENT MODE
+==========================================================*/ 
+
+const paymentMode = document.querySelector(".payment-mode-type");
+
+if (paymentMode) {
+
+	paymentMode.innerHTML +=`
+							<div class="momo-mtn hide ">
+						<div class="log">
+							<span>MTN</span>
+						</div>
+						<div class="payment-form">
+							<form>
+								<div class="mb-3">
+								  <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+								  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Phone Number">
+								</div>
+								<div class="mb-3">
+								  <label for="formGroupExampleInput2" class="form-label">Amount</label>
+								  <input type="text" class="form-control" value="23,000 Frw" id="formGroupExampleInput2"  disabled>
+								</div>
+								<div class="">
+								    <button type="submit" class="btn btn-primary">Buy</button>
+								</div>
+							</form>
+						</div>						
+					</div>
+
+
+					<div class="airtel-money hide">
+						<div class="airtel-log">
+							<span><img src="ASSETS/SIMAGES/logairtel1.png">AIRTEL</span>
+						</div>
+						<div class="payment-form">
+							<form>
+								<div class="mb-3">
+								  <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+								  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Phone Number">
+								</div>
+								<div class="mb-3">
+								  <label for="formGroupExampleInput2" class="form-label">Amount</label>
+								  <input type="text" class="form-control" value="23,000 Frw" id="formGroupExampleInput2"  disabled>
+								</div>
+								<div class="">
+								    <button type="submit" class="btn btn-primary">Buy</button>
+								</div>
+							</form>
+						</div>						
+					</div>`;
+}
+
+
+function displayPaymentMode(){
+	if (document.getElementById("pwMTN")) {
+		document.getElementById("pwMTN").addEventListener('click',function(){
+				document.querySelector(".momo-mtn").classList.remove("hide");
+				document.querySelector(".airtel-money").classList.add("hide");
+		});
+	} 
+	if (document.getElementById("pwAIRTEL")) {
+		document.getElementById("pwAIRTEL").addEventListener('click',function(){
+			    document.querySelector(".airtel-money").classList.remove("hide");
+				document.querySelector(".momo-mtn").classList.add("hide");
+		})
+	}
+}
+displayPaymentMode();
+
+const productImage = document.querySelector('.product-img');
+
+if (productImage) {
+
+	productImage.addEventListener('mousemove',function(e){
+
+	let width = productImage.offsetWidth;
+	let height = productImage.offsetHeight;
+	let mouseX = e.offsetX;
+	let mouseY = e.offsetY;
+
+	console.log(mouseX);
+	console.log(mouseY);
+
+	let bgPosX = (mouseX / width * 100);
+	let bgPosY = (mouseY / height * 100);
+
+	productImage.style.backgroundPosition =`${bgPosX}% ${bgPosY}%`;
+
+});
+
+productImage.addEventListener('mouseleave',function(){
+		productImage.style.backgroundPosition = "center";
+});
+
+}
+

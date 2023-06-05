@@ -1,5 +1,6 @@
 <?php $msg = "sellerShop";?>
 <?php $msgt = "Shops";?>
+<input type="text" value="<?= $loggedID;?>" class="get_seller hide">
 <div class="seller_dashboard">
     
     <div class="seller_dashboard_left">

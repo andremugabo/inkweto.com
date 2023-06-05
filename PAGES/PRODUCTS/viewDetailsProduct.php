@@ -90,7 +90,7 @@
 
 
             <div class="product_buy_btn">
-                <button class="buy_now">Buy Now</button>
+                <button class="buy_now" onclick="window.location.href='<?= base(); ?>checkOutProduct'">Buy Now</button>
                 <button class="add_to_cart">Add&nbsp;To&nbsp;Cart</button>
                 <Button class="like_product"><img src="ASSETS/SIMAGES/Hearts1.png" alt="heart">&nbsp;<span>14.3K</span></Button>
             </div>

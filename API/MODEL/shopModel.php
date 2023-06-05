@@ -35,8 +35,22 @@ class shopModel extends db{
         return $result;
     }
 
+    public function selectActiveShopOnUid($u_id){
+        $sql = "SELECT shop.*,users.u_id,users.u_fname,users.u_lname FROM shop JOIN users ON shop.u_id = users.u_id WHERE shop.u_id = ? AND shop.s_status = 1";
+        $statement = $this->connect()->prepare($sql);
+        $statement->execute(array(
+            $u_id
+        ));
+
+        while($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
+            return $result;
+        }
+    }
+
+
+
     public function selectActiveShop(){
-        $sql = "SELECT shop.*,users.u_id,users.u_fname,users.u_lname FROM shop JOIN users ON shop.u_id = users.u_id WHERE shop.s_status = 1";
+        $sql = "SELECT shop.*,users.u_id,users.u_fname,users.u_lname FROM shop JOIN users ON shop.u_id = users.u_id WHERE  shop.s_status = 1";
         $statement = $this->connect()->prepare($sql);
         $statement->execute();
 

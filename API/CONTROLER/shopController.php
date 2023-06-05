@@ -8,6 +8,7 @@ $action = $_GET['action'];
 $shop = array();
 
 
+
 switch ($action) {
     case 'createShop':
         if (isset($_POST['create_shop'])) {
@@ -63,8 +64,13 @@ switch ($action) {
         }
         break;
         case 'displayShop':
-            array_push($shop,$shops->selectActiveShop());
-            echo json_encode($shop);
+            // if ($_GET['sellerid']) {
+            //    $seller_id = $_GET['sellerid'];
+                array_push($shop,$shops->selectActiveShop());
+                echo json_encode($shop);
+                // var_dump($seller_id);
+            // }
+            
             break;
     
     default:
